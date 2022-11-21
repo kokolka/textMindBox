@@ -1,14 +1,15 @@
+import { TASK_TABLE_ADD, TASK_TABLE_PERFORM } from './actionTypes';
 
-type addTaskType = {
-    type: string, //*
+export type addTaskType = {
+    type: typeof TASK_TABLE_ADD
     payload: string
 }
 
-export const addTask = (text: string): addTaskType => ({type: 'taskTable/addTask', payload: text})
+export const addTask = (text: string): addTaskType => ({type: TASK_TABLE_ADD, payload: text})
 
 type performTaskType = {
-    type: string,
+    type: typeof TASK_TABLE_PERFORM
     payload: number
 }
 
-export const performTask = (id: number) => ({type: 'taskTable/addDelete', payload: id})
+export const performTask = (id: number): performTaskType => ({type: TASK_TABLE_PERFORM, payload: id})
