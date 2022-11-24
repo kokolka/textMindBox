@@ -39,7 +39,7 @@ describe('reducer', () => {
             task: [
                 {id: 0, text: 'test text 1', perform: false},
                 {id: 1, text: 'test text 2', perform: false},
-                {id: 2, text: 'test text 2', perform: false}
+                {id: 2, text: 'test text 3', perform: false}
             ]
         }
 
@@ -49,7 +49,7 @@ describe('reducer', () => {
             task: [
                 {id: 0, text: 'test text 1', perform: false},
                 {id: 1, text: 'test text 2', perform: true},
-                {id: 2, text: 'test text 2', perform: false}
+                {id: 2, text: 'test text 3', perform: false}
             ]
         });
     })

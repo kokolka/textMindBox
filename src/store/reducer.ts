@@ -1,3 +1,4 @@
+import { StateType } from './store';
 import { addTaskType, performTaskType } from './taskAC';
 
 type taskType = {
@@ -9,9 +10,8 @@ type taskType = {
 const initialState = {
     task: [] as Array<taskType>
 }
-type initialStateType = typeof initialState;
 
-export const addTaskReducer = (state = initialState, action: addTaskType): initialStateType => {
+export const addTaskReducer = (state = initialState, action: addTaskType): StateType => {
 
     let lastId = 0;
 
@@ -31,7 +31,7 @@ export const addTaskReducer = (state = initialState, action: addTaskType): initi
     }
 };
 
-export const performTaskReducer = (state = initialState, action: performTaskType): initialStateType => {
+export const performTaskReducer = (state = initialState, action: performTaskType): StateType => {
     return{
         ...state,
         task: state.task.map(el => {
