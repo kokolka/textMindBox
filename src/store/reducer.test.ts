@@ -1,11 +1,11 @@
 import { TASK_TABLE_ADD, TASK_TABLE_PERFORM } from './actionTypes';
-import {addTaskReducer, performTaskReducer} from './reducer';
+import taskReducer from './reducer';
 
 describe('reducer', () => {
     it('проверка addTaskReducer-а добавления задачи', () => {
         const testText = 'test text';
 
-        const state = addTaskReducer(undefined, {type: TASK_TABLE_ADD, payload: testText });
+        const state = taskReducer(undefined, {type: TASK_TABLE_ADD, payload: testText });
 
         expect(state).toEqual({
             task: [
@@ -22,7 +22,7 @@ describe('reducer', () => {
             ]
         }
 
-        const state = addTaskReducer(testState, {type: TASK_TABLE_ADD, payload: testText });
+        const state = taskReducer(testState, {type: TASK_TABLE_ADD, payload: testText });
 
         expect(state).toEqual({
             task: [
@@ -43,7 +43,7 @@ describe('reducer', () => {
             ]
         }
 
-        const state = performTaskReducer(testState, {type: TASK_TABLE_PERFORM, payload: testId});
+        const state = taskReducer(testState, {type: TASK_TABLE_PERFORM, payload: testId});
 
         expect(state).toEqual({
             task: [

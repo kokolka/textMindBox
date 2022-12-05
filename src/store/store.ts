@@ -1,10 +1,10 @@
-type taskType = {
-    text: string,
-    id: number,
-    perform: boolean
-}
+import { addTaskType, performTaskType } from './taskAC';
+import taskReducer, {StateType, initialState } from './reducer';
+import { legacy_createStore as createStore, AnyAction, combineReducers } from "redux";
 
-const state = {
-    task: [] as Array<taskType>
-}
-export type StateType = typeof state;
+export const store = createStore<any, addTaskType | performTaskType, unknown, unknown>(
+    combineReducers({
+        taskReducer
+    }),
+    initialState
+);
