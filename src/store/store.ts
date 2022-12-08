@@ -6,9 +6,12 @@ import { closeFormForTaskType, openFormForTaskType } from './stateAppAC';
 
 type storeACType = addTaskType | performTaskType | openFormForTaskType | closeFormForTaskType;
 
-export const store = createStore<any, storeACType, unknown, unknown>(
-    combineReducers({
-        taskReducer,
-        stateAppReducer
-    })
-);
+const reducers = combineReducers({
+    taskReducer,
+    stateAppReducer
+})
+
+type reducersType = typeof reducers;
+export type StateType = ReturnType<reducersType>; //тип глобального state
+
+export const store = createStore<any, storeACType, unknown, unknown>(reducers);

@@ -1,14 +1,21 @@
-import { getTaskSelector } from './selectors';
+import { getTaskSelector, getAppStateSelector } from './selectors';
+
 
 describe('selectors', () => {
-    it('проверка получаемого значения из state', () => {
-        const testState = {
+    const testState = {
+        stateAppReducer: {
+            formForTask: true
+        },
+        taskReducer: {
             task: [
                 { id: 0, text: 'test text', perform: false },
                 { id: 1, text: 'test text 1', perform: false },
                 { id: 2, text: 'test text 2', perform: false }
             ]
         }
+    }
+
+    it('проверка получаемых знач из state', () => {
 
         const result = getTaskSelector(testState);
 
@@ -17,5 +24,11 @@ describe('selectors', () => {
             { id: 1, text: 'test text 1', perform: false },
             { id: 2, text: 'test text 2', perform: false }
         ])
+    });
+    it('проверка получаемого значения из state о состоянии формы', () => {
+
+        const result = getAppStateSelector(testState);
+
+        expect(result).toEqual(true)
     })
 })
