@@ -1,10 +1,14 @@
+import taskReducer from './taskReducer';
+import stateAppReducer from './stateAppReducer';
+import { legacy_createStore as createStore, combineReducers } from "redux";
 import { addTaskType, performTaskType } from './taskAC';
-import taskReducer, {StateType, initialState } from './reducer';
-import { legacy_createStore as createStore, AnyAction, combineReducers } from "redux";
+import { closeFormForTaskType, openFormForTaskType } from './stateAppAC';
 
-export const store = createStore<any, addTaskType | performTaskType, unknown, unknown>(
+type storeACType = addTaskType | performTaskType | openFormForTaskType | closeFormForTaskType;
+
+export const store = createStore<any, storeACType, unknown, unknown>(
     combineReducers({
-        taskReducer
-    }),
-    initialState
+        taskReducer,
+        stateAppReducer
+    })
 );

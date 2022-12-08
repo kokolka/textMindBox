@@ -1,7 +1,7 @@
 import { TASK_TABLE_ADD, TASK_TABLE_PERFORM } from './actionTypes';
-import taskReducer from './reducer';
+import taskReducer from './taskReducer';
 
-describe('reducer', () => {
+describe('taskReducer', () => {
     it('проверка addTaskReducer-а добавления задачи', () => {
         const testText = 'test text';
 

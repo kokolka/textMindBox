@@ -1,19 +1,21 @@
 import { TASK_TABLE_ADD, TASK_TABLE_PERFORM } from './actionTypes';
 import { addTaskType, performTaskType } from './taskAC';
 
+type taskACType = addTaskType | performTaskType;
+
 type taskType = {
     text: string,
     id: number,
     perform: boolean
 }
 
-export const initialState = {
+const initialStateForTaskReducer = {
     task: [] as Array<taskType>
 }  
-export type StateType = typeof initialState;
+export type TaskStateType = typeof initialStateForTaskReducer;
 
 
-const taskReducer = (state: StateType = initialState, action: addTaskType | performTaskType): StateType => {
+const taskReducer = (state = initialStateForTaskReducer, action: taskACType): TaskStateType => {
     switch (action.type) {
         case TASK_TABLE_ADD: {
             let lastId = 0;

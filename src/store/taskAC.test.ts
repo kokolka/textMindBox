@@ -1,5 +1,4 @@
 import { TASK_TABLE_ADD, TASK_TABLE_PERFORM } from './actionTypes';
-
 import {addTask, performTask} from './taskAC';
 
 describe('taskAC', () => {
