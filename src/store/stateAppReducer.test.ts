@@ -1,23 +1,32 @@
 import stateAppReducer from './stateAppReducer';
-import { CLOSE_FORM_FOR_TASK, OPEN_FORM_FOR_TASK } from './actionTypes';
+import { ACTIVE_TASK, ALL_TASK, COMPLETED_TASK } from './actionTypes';
 
 describe('stateAppReducer', () => {
     it('открытие формы для добавления задания', () => {
-        const state = stateAppReducer(undefined, { type: OPEN_FORM_FOR_TASK });
+        const testState = {
+            formForTask: 'completed'
+        }
+
+        const state = stateAppReducer(testState, { type: ALL_TASK});
 
         expect(state).toEqual({
-            formForTask: true
+            formForTask: 'all'
         })
     });
     it('закрытие формы для добавления задания', () => {
-        const testState = {
-            formForTask: true
-        }
-
-        const state = stateAppReducer(testState, { type: CLOSE_FORM_FOR_TASK });
+        
+        const state = stateAppReducer(undefined, { type: ACTIVE_TASK });
 
         expect(state).toEqual({
-            formForTask: false
+            formForTask: 'active'
+        })
+    })
+    it('закрытие формы для добавления задания', () => {
+        
+        const state = stateAppReducer(undefined, { type: COMPLETED_TASK });
+
+        expect(state).toEqual({
+            formForTask: 'completed'
         })
     })
 })

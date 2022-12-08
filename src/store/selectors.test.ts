@@ -4,7 +4,7 @@ import { getTaskSelector, getAppStateSelector } from './selectors';
 describe('selectors', () => {
     const testState = {
         stateAppReducer: {
-            formForTask: true
+            formForTask: 'all'
         },
         taskReducer: {
             task: [
@@ -29,6 +29,6 @@ describe('selectors', () => {
 
         const result = getAppStateSelector(testState);
 
-        expect(result).toEqual(true)
+        expect(result).toEqual('all')
     })
 })

@@ -1,12 +1,17 @@
-import { CLOSE_FORM_FOR_TASK, OPEN_FORM_FOR_TASK } from "./actionTypes"
+import { ACTIVE_TASK, ALL_TASK, COMPLETED_TASK} from "./actionTypes"
 
 
-export type openFormForTaskType = {
-    type: typeof OPEN_FORM_FOR_TASK
+export type getAllTackType = {
+    type: typeof ALL_TASK
 }
-export const openFormForTask = (): openFormForTaskType => ({type: OPEN_FORM_FOR_TASK});
+export const getAllTack = (): getAllTackType => ({type: ALL_TASK});
 
-export type closeFormForTaskType = {
-    type: typeof CLOSE_FORM_FOR_TASK
+export type getActiveTaskType = {
+    type: typeof ACTIVE_TASK
 }
-export const closeFormForTask = (): closeFormForTaskType => ({type: CLOSE_FORM_FOR_TASK});
+export const getActiveTask = (): getActiveTaskType => ({type: ACTIVE_TASK});
+
+export type getCompletedTaskType = {
+    type: typeof COMPLETED_TASK
+}
+export const getCompletedTask = (): getCompletedTaskType => ({type: COMPLETED_TASK});

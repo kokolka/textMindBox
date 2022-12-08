@@ -1,15 +1,20 @@
-import {openFormForTask, closeFormForTask} from './stateAppAC'
-import { CLOSE_FORM_FOR_TASK, OPEN_FORM_FOR_TASK } from './actionTypes';
+import {getAllTack, getActiveTask, getCompletedTask} from './stateAppAC'
+import { ALL_TASK, ACTIVE_TASK, COMPLETED_TASK } from './actionTypes';
 
 describe('stateAppAC', () => {
-    it('экшен для открытия формы для добавления задания', () => {
-        const result = openFormForTask();
+    it('экшен для получения всех задачь', () => {
+        const result = getAllTack();
 
-        expect(result).toEqual({type: OPEN_FORM_FOR_TASK});
+        expect(result).toEqual({type: ALL_TASK});
     });
-    it('экшен для закрытия формы для добаления задания', () => {
-        const result = closeFormForTask();
+    it('экшен для получения невыполненых задачь', () => {
+        const result = getActiveTask();
 
-        expect(result).toEqual({type: CLOSE_FORM_FOR_TASK})
+        expect(result).toEqual({type: ACTIVE_TASK})
+    })
+    it('экшен для получения выполненых задачь', () => {
+        const result = getCompletedTask();
+
+        expect(result).toEqual({type: COMPLETED_TASK})
     })
 })

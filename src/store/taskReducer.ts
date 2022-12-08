@@ -9,13 +9,13 @@ type taskType = {
     perform: boolean
 }
 
-const initialStateForTaskReducer = {
+const initialState = {
     task: [] as Array<taskType>
 }  
-export type TaskStateType = typeof initialStateForTaskReducer;
+type StateType = typeof initialState;
 
 
-const taskReducer = (state = initialStateForTaskReducer, action: taskACType): TaskStateType => {
+const taskReducer = (state = initialState, action: taskACType): StateType => {
     switch (action.type) {
         case TASK_TABLE_ADD: {
             let lastId = 0;

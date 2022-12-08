@@ -1,26 +1,32 @@
-import { CLOSE_FORM_FOR_TASK, OPEN_FORM_FOR_TASK } from "./actionTypes";
-import { closeFormForTaskType, openFormForTaskType } from "./stateAppAC"
+import { ACTIVE_TASK, ALL_TASK, COMPLETED_TASK} from "./actionTypes";
+import { getActiveTaskType, getAllTackType, getCompletedTaskType } from "./stateAppAC"
 
-type stateAppACType = openFormForTaskType | closeFormForTaskType;
+type stateAppACType = getAllTackType | getActiveTaskType | getCompletedTaskType;
 
-const initialStateAppReducer = {
-    formForTask: false
+const initialState = {
+    formForTask: 'all'
 }
 
-export type AppStateType = typeof initialStateAppReducer;
+type StateType = typeof initialState;
 
-const stateAppReducer = (state = initialStateAppReducer, action: stateAppACType): AppStateType => {
+const stateAppReducer = (state = initialState, action: stateAppACType): StateType => {
     switch(action.type){
-        case OPEN_FORM_FOR_TASK: {
+        case ALL_TASK: {
             return {
                 ...state,
-                formForTask: true
+                formForTask: 'all'
             }
         }
-        case CLOSE_FORM_FOR_TASK: {
+        case ACTIVE_TASK: {
             return {
                 ...state,
-                formForTask: false
+                formForTask: 'active'
+            }
+        }
+        case COMPLETED_TASK: {
+            return {
+                ...state,
+                formForTask: 'completed'
             }
         }
         default: return state

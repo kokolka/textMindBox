@@ -2,9 +2,9 @@ import taskReducer from './taskReducer';
 import stateAppReducer from './stateAppReducer';
 import { legacy_createStore as createStore, combineReducers } from "redux";
 import { addTaskType, performTaskType } from './taskAC';
-import { closeFormForTaskType, openFormForTaskType } from './stateAppAC';
+import { getActiveTaskType, getAllTackType, getCompletedTaskType } from './stateAppAC';
 
-type storeACType = addTaskType | performTaskType | openFormForTaskType | closeFormForTaskType;
+type storeACType = addTaskType | performTaskType | getAllTackType | getActiveTaskType | getCompletedTaskType;
 
 const reducers = combineReducers({
     taskReducer,
