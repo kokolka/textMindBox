@@ -1,3 +1,4 @@
+import { StateType } from './store';
 import { getTaskSelector, getAppStateSelector } from './selectors';
 
 
@@ -13,7 +14,7 @@ describe('selectors', () => {
                 { id: 2, text: 'test text 2', perform: false }
             ]
         }
-    }
+    } as StateType
 
     it('проверка получаемых знач из state', () => {
 

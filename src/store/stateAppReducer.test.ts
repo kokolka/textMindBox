@@ -1,10 +1,10 @@
-import stateAppReducer from './stateAppReducer';
+import stateAppReducer, {formForTaskType} from './stateAppReducer';
 import { ACTIVE_TASK, ALL_TASK, COMPLETED_TASK } from './actionTypes';
 
 describe('stateAppReducer', () => {
     it('открытие формы для добавления задания', () => {
         const testState = {
-            formForTask: 'completed'
+            formForTask: 'completed' as formForTaskType
         }
 
         const state = stateAppReducer(testState, { type: ALL_TASK});

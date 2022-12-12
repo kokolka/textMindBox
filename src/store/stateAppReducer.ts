@@ -3,8 +3,10 @@ import { getActiveTaskType, getAllTackType, getCompletedTaskType } from "./state
 
 type stateAppACType = getAllTackType | getActiveTaskType | getCompletedTaskType;
 
+export type formForTaskType = 'all' | 'active' | 'completed';
+
 const initialState = {
-    formForTask: 'all'
+    formForTask: 'all' as formForTaskType
 }
 
 type StateType = typeof initialState;
