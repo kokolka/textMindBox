@@ -1,15 +1,14 @@
 import React from 'react';
-import TaskInputElement from './task-input-element/task-input-element';
+import {TaskInputElement} from './task-input-element/TaskInputElement';
 import TaskTableElement from './task-table-element/TaskTableElement';
 
 
-const TaskTablePage: React.FC = () => {
-    return(
+export const TaskTablePage: React.FC<any> = (props) => {
+    return (
         <div >
-            <TaskInputElement />
-            <TaskTableElement s='g'/>
+            <TaskInputElement/>
+            {/* <TaskTableElement s='g'/> */}
         </div>
     )
+        
 };
-
-export default TaskTablePage;

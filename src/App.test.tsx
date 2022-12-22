@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App';
 import { create } from 'react-test-renderer';
-import TaskTablePage from './component/table_page/TaskTablePage';
+import {TaskTablePage} from './component/table_page/TaskTablePage';
 
 describe('app', () => {
   it('отрисовка компоненты TaskTablePage', () => {

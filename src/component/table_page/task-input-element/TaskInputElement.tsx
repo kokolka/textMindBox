@@ -1,21 +1,19 @@
 import React from 'react';
 import {
     Formik,
-    FormikHelpers,
-    FormikProps,
     Form,
-    Field,
-    FieldProps,
+    Field
 } from 'formik';
 
 interface MyFormValues {
     newTask: string;
 }
 
-const TaskInputElement: React.FC = () => {
+export const TaskInputElement: React.FC<any> = () => {
     const initialValues: MyFormValues = { newTask: '' };
     return (
         <div>
+            <h1>fff</h1>
             <Formik
                 initialValues={initialValues}
                 onSubmit={(values, actions) => {
@@ -24,6 +22,7 @@ const TaskInputElement: React.FC = () => {
                     actions.setSubmitting(false);
                 }}
             >
+                
                 <Form>
                     <Field id="newTask" name="newTask" placeholder="Введите новое задание" />
                     <button type="submit">Добавить</button>
@@ -33,4 +32,4 @@ const TaskInputElement: React.FC = () => {
     )
 }
 
-export default TaskInputElement;
+// export default TaskInputElement;
