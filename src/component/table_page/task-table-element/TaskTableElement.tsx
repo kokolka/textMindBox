@@ -1,11 +1,14 @@
 import React from 'react';
 
-const TaskTableElement: React.FC<{s: string}> = ({s}) => {
+export const TaskTableElement: React.FC<any> = () => {
     return(
         <div>
+            <div>
+                <a href=""></a>
+            </div>
+            <div>
 
+            </div>
         </div>
     )
 }
-
-export default TaskTableElement;

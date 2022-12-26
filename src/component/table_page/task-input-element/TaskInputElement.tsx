@@ -13,7 +13,6 @@ export const TaskInputElement: React.FC<any> = () => {
     const initialValues: MyFormValues = { newTask: '' };
     return (
         <div>
-            <h1>fff</h1>
             <Formik
                 initialValues={initialValues}
                 onSubmit={(values, actions) => {
@@ -22,14 +21,11 @@ export const TaskInputElement: React.FC<any> = () => {
                     actions.setSubmitting(false);
                 }}
             >
-                
                 <Form>
-                    <Field id="newTask" name="newTask" placeholder="Введите новое задание" />
-                    <button type="submit">Добавить</button>
+                    <Field type="text" id="newTask" name="newTask" placeholder="Введите новое задание" />
+                    <button type="submit">Добавить задачу</button>
                 </Form>
             </Formik>
         </div>
     )
 }
-
-// export default TaskInputElement;

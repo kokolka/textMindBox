@@ -1,13 +1,17 @@
 import { screen, render } from "@testing-library/react";
 import renderer from 'react-test-renderer';
-import React from 'react'
 import {TaskTablePage} from './TaskTablePage';
-import { TaskInputElement } from "./task-input-element/TaskInputElement";
 
 //создание мока внутреннего компонента
 jest.mock('./task-input-element/TaskInputElement', () => ({
     TaskInputElement: () => {
         return <div data-testid="TaskInputElement"/>
+    }
+}));
+//создание мока внутреннего компонента
+jest.mock('./task-table-element/TaskTableElement', () => ({
+    TaskTableElement: () => {
+        return <div data-testid="TaskTableElement"/>
     }
 }));
 
@@ -23,5 +27,10 @@ describe('TaskTablePage', () => {
 
         render(<TaskTablePage/>);
         expect(screen.queryByTestId('TaskInputElement')).toBeInTheDocument();
+    })
+    it('проверка рендера TaskTableElement', () => {
+
+        render(<TaskTablePage/>);
+        expect(screen.queryByTestId('TaskTableElement')).toBeInTheDocument();
     })
 })

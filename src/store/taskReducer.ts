@@ -6,11 +6,13 @@ type taskACType = addTaskType | performTaskType;
 type taskType = {
     text: string,
     id: number,
-    perform: boolean
+    perform: boolean //true - выполненая задача, false - невыполненая задача
 }
 
 const initialState = {
-    task: [] as Array<taskType>
+    task: [
+        {text: 'Создать первую задачу', id: 0, perform: false}
+    ] as Array<taskType>
 }  
 type StateType = typeof initialState;
 

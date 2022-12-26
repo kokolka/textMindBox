@@ -9,7 +9,8 @@ describe('taskReducer', () => {
 
         expect(state).toEqual({
             task: [
-                {id: 0, text: testText, perform: false}
+                {text: 'Создать первую задачу', id: 0, perform: false},
+                {id: 1, text: testText, perform: false}
             ]
         });
     });

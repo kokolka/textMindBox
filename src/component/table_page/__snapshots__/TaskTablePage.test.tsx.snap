@@ -5,5 +5,8 @@ exports[`TaskTablePage проверка рендера TaskTablePage 1`] = `
   <div
     data-testid="TaskInputElement"
   />
+  <div
+    data-testid="TaskTableElement"
+  />
 </div>
 `;
