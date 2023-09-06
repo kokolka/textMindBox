@@ -1,6 +1,5 @@
-import {StateType} from './store';
+import { StateType } from './store';
 
+export const getTaskSelector = (state: StateType) => state.tasks.task;
 
-export const getTaskSelector = (state: StateType) => state.taskReducer.task;
-
-export const getAppStateSelector = (state: StateType) => state.stateAppReducer.formForTask;
+export const getAppStateSelector = (state: StateType) => state.selectorActiveTasks.formForTask;
