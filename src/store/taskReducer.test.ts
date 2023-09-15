@@ -58,9 +58,7 @@ describe('taskReducer', () => {
     });
   });
 
-  it('проверка выполнения performTaskReducer-а выполения задания', () => {
-    const testId = 1;
-
+  it('проверка отчитски задачь', () => {
     const testState = {
       taskIdCounter: 3,
       task: [
