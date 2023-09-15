@@ -22,8 +22,8 @@ export const SelectorForTasks = () => {
   }, [tasks]);
 
   return (
-    <div className=" w-full flex justify-between items-center gap-2 text-xs text-gray-400 mt-3 px-5 pb-5">
-      <div className="flex w-1/4">
+    <div className=" w-full flex justify-evenly items-center gap-2 text-xs text-gray-400 mt-3 pb-5">
+      <div className="flex w-1/4 pl-2">
         <p className="flex ">Задач: {countCompletedTask}</p>
       </div>
 
@@ -33,31 +33,31 @@ export const SelectorForTasks = () => {
           onClick={() => {
             dispatch(getAllTack());
           }}>
-          All
+          Все
         </button>
         <button
           className="flex justify-center hover:text-gray-600 active:text-gray-200"
           onClick={() => {
             dispatch(getActiveTask());
           }}>
-          Active
+          Активные
         </button>
         <button
           className="flex justify-center hover:text-gray-600 active:text-gray-200"
           onClick={() => {
             dispatch(getCompletedTask());
           }}>
-          Completed
+          Завершенные
         </button>
       </div>
 
-      <div className="flex">
+      <div className="flex pr-2">
         <button
           className="flex justify-center hover:text-gray-600 active:text-gray-200"
           onClick={() => {
             dispatch(clearPerformTask());
           }}>
-          Clear completed
+          Отчистить список задач
         </button>
       </div>
     </div>

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Тестирование отрисовки блока с кнопками renders with initial state 1`] = `
+<div
+  className=" w-full flex justify-evenly items-center gap-2 text-xs text-gray-400 mt-3 pb-5"
+>
+  <div
+    className="flex w-1/4 pl-2"
+  >
+    <p
+      className="flex "
+    >
+      Задач: 
+      0
+    </p>
+  </div>
+  <div
+    className="flex gap-3 w-full justify-center"
+  >
+    <button
+      className="flex justify-center hover:text-gray-600 active:text-gray-200"
+      onClick={[Function]}
+    >
+      Все
+    </button>
+    <button
+      className="flex justify-center hover:text-gray-600 active:text-gray-200"
+      onClick={[Function]}
+    >
+      Активные
+    </button>
+    <button
+      className="flex justify-center hover:text-gray-600 active:text-gray-200"
+      onClick={[Function]}
+    >
+      Завершенные
+    </button>
+  </div>
+  <div
+    className="flex pr-2"
+  >
+    <button
+      className="flex justify-center hover:text-gray-600 active:text-gray-200"
+      onClick={[Function]}
+    >
+      Отчистить список задач
+    </button>
+  </div>
+</div>
+`;

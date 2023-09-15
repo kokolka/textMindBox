@@ -11,10 +11,6 @@ export const TaskTableElement: React.FC<any> = () => {
 
   const [tasksList, setTasksList] = React.useState([] as Array<taskType> | []);
 
-  let TL = [] as Array<taskType> | [];
-
-  const myRef = useRef<boolean>(false);
-
   React.useEffect(() => {
     const newArray = tasksListSelector.filter((el) => {
       if (typeTask === 'active' && !el.perform) {
@@ -27,17 +23,6 @@ export const TaskTableElement: React.FC<any> = () => {
     });
 
     setTasksList(newArray);
-
-    if (!myRef.current) {
-      console.log(`create elem -> ${tasksListSelector.length}`);
-      myRef.current = true;
-    } else {
-      console.log(`update elem-> ${tasksListSelector.length}`);
-    }
-
-    return () => {
-      console.log(`delete elem-> ${tasksListSelector.length}`);
-    };
   }, [tasksListSelector, typeTask]);
 
   return (

@@ -8,7 +8,7 @@ interface MyFormValues {
 }
 
 const InnerForm = (props: FormikProps<MyFormValues>) => {
-  const { touched, errors, isSubmitting } = props;
+  const { isSubmitting } = props;
 
   return (
     <Form className="grid gap-2 grid-cols-7 justify-center items-center">
@@ -28,7 +28,7 @@ const InnerForm = (props: FormikProps<MyFormValues>) => {
           className=" p-1 rounded-md flex justify-center items-center border border-current border-black h-5 hover:bg-gray-300 active:bg-gray-50"
           type="submit"
           disabled={isSubmitting}>
-          Add task
+          Добавить
         </button>
       </div>
     </Form>
@@ -89,7 +89,7 @@ export const TaskInputElement: React.FC<taskInputElementPropsType> = (props) => 
               <title>arrow_down [#338]</title>
               <desc>Created with Sketch.</desc>
               <defs></defs>
-              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                   id="Dribbble-Light-Preview"
                   transform="translate(-220.000000, -6684.000000)"
@@ -113,7 +113,7 @@ export const TaskInputElement: React.FC<taskInputElementPropsType> = (props) => 
               <title>arrow_up [#337]</title>
               <desc>Created with Sketch.</desc>
               <defs></defs>
-              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                   id="Dribbble-Light-Preview"
                   transform="translate(-260.000000, -6684.000000)"
