@@ -25,7 +25,7 @@ const InnerForm = (props: FormikProps<MyFormValues>) => {
 
       <div className="col-span-2">
         <button
-          className=" p-1 rounded-md flex justify-center items-center border border-current border-black h-5 hover:bg-gray-300 active:bg-gray-50"
+          className=" p-3 rounded-md flex justify-center items-center border border-current border-black h-5 hover:bg-gray-300 active:bg-gray-50"
           type="submit"
           disabled={isSubmitting}>
           Добавить
